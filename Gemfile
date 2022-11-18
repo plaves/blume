@@ -1,14 +1,8 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.7.0'
-
 gem 'rails', '~> 7.0.4'
-
-# Use sqlite3 as the database for Active Record
 gem 'sqlite3', '~> 1.4'
-
-# Use the Puma web server [https://github.com/puma/puma]
 gem 'puma', '~> 5.0'
 
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
@@ -25,13 +19,26 @@ gem 'bootsnap', require: false
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem 'rack-cors'
+gem 'jwt', '~> 2.5'
+gem 'rodauth-rails', '~> 1.6'
+gem 'active_model_serializers', '~> 0.10.13'
+
+gem 'nanoid', '~> 2.0'
+gem 'discard', '~> 1.2'
+gem 'kaminari', '~> 1.2'
+gem 'rack-cors', '~> 1.1'
 
 group :development, :test do
-  # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
-  gem 'debug', platforms: %i[ mri mingw x64_mingw ]
+  gem 'debug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'ffaker', '~> 2.21'
 end
 
 group :development do
-  # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
-  # gem 'spring'
+  # gem 'listen', '~> 3.7'
+  gem 'better_errors', '~> 2.9'
+end
+
+group :test do
+  # gem 'shoulda', '~> 4.0'
+  # gem 'factory_bot_rails', '~> 6.2'
 end
